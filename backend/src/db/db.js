@@ -5,8 +5,7 @@ const mongoose = require("mongoose")
 
 async function connectDB(){
 
-  await mongoose.connect("mongodb://rbu:3JBus2p1h9NjPLgQ@ac-fdw7oqn-shard-00-00.htxbvou.mongodb.net:27017,ac-fdw7oqn-shard-00-01.htxbvou.mongodb.net:27017,ac-fdw7oqn-shard-00-02.htxbvou.mongodb.net:27017/?ssl=true&replicaSet=atlas-h5tzqc-shard-0&authSource=admin&appName=rbu-backend");
-  
+  await mongoose.connect(process.env.MONGO_URI);
   console.log("connected to DB")
 }
 
